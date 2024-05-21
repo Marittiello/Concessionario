@@ -1,8 +1,6 @@
 package controller;
-
-import view.GestoreIO;
 import model.Veicolo;
-
+@SuppressWarnings("unused")
 public class Crud {
 	Veicolo[] concessionario= new Veicolo[5];
 
@@ -37,6 +35,39 @@ public class Crud {
 			return false;
 		}
 	}
+	public Veicolo cercaVeicolo(int id) {
+		for(int i=0;i<concessionario.length;i++) {
+			if(concessionario[i]!=null) {
+				if(concessionario[i].id==id) {
+					return concessionario[i];
+				}
+			}
+		}
+		return null;
+	}
+	public Veicolo cercaVeicolo(String targa) {
+		for(int i=0;i<concessionario.length;i++) {
+			if(concessionario[i]!=null) {
+				if(concessionario[i].targa.equals(targa)) {
+					return concessionario[i];
+				}
+			}
+		}
+		return null;
+	}
+
+
+	public boolean eliminaVeicolo(int id) {
+		boolean flag;
+		for(int i=0;i<concessionario.length;i++) {
+			if(concessionario[i]!=null) {
+				if(concessionario[i].id==id) {
+					concessionario[i]=null;
+					return flag=true;
+				}
+			}
+		}
+		return flag=false;
+	}
+
 }
-
-

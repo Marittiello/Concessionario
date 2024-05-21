@@ -71,12 +71,16 @@ public class GestoreIO {
 		}
 	}
 
+	public void menu2() {
+		System.out.println("************");
+		System.out.println("1)Cerca tramite id: ");
+		System.out.println("2)Cerca tramite targa");
+		System.out.println("************");
+	}
 
 
-
-
-
-
-
+	public void stampaStringa(String frase) {
+		System.out.println(frase);
+	}
 
 }
