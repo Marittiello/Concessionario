@@ -70,4 +70,16 @@ public class Crud {
 		return flag=false;
 	}
 
+	public boolean eliminaVeicolo(String targa) {
+		boolean flag;
+		for(int i=0;i<concessionario.length;i++) {
+			if(concessionario[i]!=null) {
+				if(concessionario[i].targa.equals(targa)) {
+					concessionario[i]=null;
+					return flag=true;
+				}
+			}
+		}
+		return flag=false;
+	}
 }

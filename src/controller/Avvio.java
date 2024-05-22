@@ -26,6 +26,7 @@ public class Avvio {
 				else {
 					gestore.stampaVerificaInserimento(verifica);
 				}
+				break;
 			}
 			case 2:{ 
 				gestore.menu2();
@@ -56,17 +57,42 @@ public class Avvio {
 				break;
 			}
 			case 4:{
-				boolean flag;
-				int id=gestore.leggiIntero("Inserisci l'id dell'auto da eliminare.");
-				flag=opzione.eliminaVeicolo(id);
-				if(flag) {
-					gestore.stampaStringa("L'auto e' stata eliminata con successo.");
+
+
+				gestore.menu2();
+				scelta=gestore.leggiIntero("Selezionare l'opzione... ");
+
+				switch(scelta) {
+				case 1:{
+
+					boolean flag;
+					int id=gestore.leggiIntero("Inserisci l'id dell'auto da eliminare.");
+					flag=opzione.eliminaVeicolo(id);
+					if(flag) {
+						gestore.stampaStringa("L'auto e' stata eliminata con successo.");
+					}
+					else if(!flag) {
+						gestore.stampaStringa("ID inesistente.");
+					}
+					break;
 				}
-				else if(!flag) {
-					gestore.stampaStringa("ID inesistente.");
+				case 2:{
+
+					boolean flag;
+					String targa=gestore.leggiStringa("Inserisci la targa dell'auto da eliminare.");
+					flag=opzione.eliminaVeicolo(targa);
+					if(flag) {
+						gestore.stampaStringa("L'auto e' stata eliminata con successo.");
+					}
+					else if(!flag) {
+						gestore.stampaStringa("Targa inesistente.");
+					}
+					break;
 				}
-				break;
+				}
 			}
+
+
 			case 5:{
 				gestore.stampaStringa("Il Programma e' terminato");
 			}
@@ -74,5 +100,4 @@ public class Avvio {
 		}while(scelta!=5);	
 
 	}
-
 }

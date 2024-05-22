@@ -34,11 +34,11 @@ public class GestoreIO {
 	}
 
 	public void schedaVeicolo(Veicolo veicolo) {
-		System.out.println(veicolo.id);
-		System.out.println(veicolo.targa);
-		System.out.println(veicolo.colore);
-		System.out.println(veicolo.modello);
-		System.out.println(veicolo.valore);
+		System.out.println("ID: "+veicolo.id);
+		System.out.println("Targa: "+veicolo.targa);
+		System.out.println("Colore: "+veicolo.colore);
+		System.out.println("Modello: "+veicolo.modello);
+		System.out.println("Valore: "+veicolo.valore);
 	}
 	public void menu() {
 		System.out.println("****MENU****");
